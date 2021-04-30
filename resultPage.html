@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Medication Research</title>
+	
+	<script type="text/javascript" src="requestResult.js"></script>
+	<style>
+		body {
+			background-color:indigo;
+			color:azure;
+			border-style:  dashed;
+			padding: 50px;
+			width: 200px;
+			height: 300px;
+			text-align: justify;
+
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-200px;
+			margin-top:-180px;
+	}
+	</style>
+	</head>
+	<h4>Research</h4>
+	<body>
+		<script>
+				document.writeln("Username: "+localStorage.getItem("username"));
+		</script>
+		<br></br>
+		<script>
+			document.writeln("Message: "+localStorage.getItem("message"));
+		</script>
+			<br></br>
+		<script>
+			var test = localStorage.getItem("option");
+			document.writeln("Are you addicted to any medication? "+test);
+		</script>
+		<br></br>
+		<script>
+			if (test=="Yes"){
+				document.writeln("What reason do you not stop? "+localStorage.getItem("question"));
+			
+			}else if (test=="NotNow"){
+				document.writeln("What did you do to stop? "+localStorage.getItem("question"));
+			
+			}else {
+				document.writeln("What frequency do you take? "+localStorage.getItem("question"));
+			}
+		</script>
+		<br></br>
+		<script>
+			document.writeln("Selected the remedy: "+localStorage.getItem("selectionBox"));
+		</script>
+
+		<br>
+		<br>
+		<button onclick="gotoFisrtPage()">New Research</button>
+	</body>
+</html>

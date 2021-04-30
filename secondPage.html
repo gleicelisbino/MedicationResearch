@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Medication Research</title>
+       
+            <script type="text/javascript" src="requestSecondPage.js"></script>
+            <style>
+                body {
+                    background-color:indigo;
+                    color:azure;
+                    border-style:  dashed;
+                    padding: 50px;
+                    width: 200px;
+                    height: 300px;
+                    text-align: justify;
+        
+                    position:absolute;
+                    left:50%;
+                    top:50%;
+                    margin-left:-200px;
+                    margin-top:-180px;
+            }
+            </style>
+        </head>
+
+        <h4>Research</h4>
+        <body>
+            <p>Are you addicted to any medication?</p> 
+            <ul>
+                <li>
+                    <label for="Yes">Yes.</label>
+                    <input type="radio" id="Yes" name="test" value="Yes" />
+                </li>
+                <li>
+                    <label for="NotNow">NotNow.</label>
+                    <input type="radio" id="NotNow" name="test" value="NotNow">  
+                </li>
+                <li>
+                    <label for="Never">Never.</label>
+                    <input type="radio" id="Never" name="test" value="Never"> 
+                </li>
+                <button type="text" id="b" onclick="add()">Save</button>
+            </ul>
+                   
+                    
+        <div id="myF" style="display: none;">
+            <br>
+            <label for="firstQuestion">What reason do you not stop?</label>
+            <input type="text" id="firstQuestion"  />
+            <br>
+            <button type="text" id="b" onclick="saveFirstQuestion()">Submit</button>
+        </div>
+
+        <div id="myS"style="display: none;" >
+            <br>
+            <label for="secondQuestion">What did you do to stop?</label>
+            <input type="text" id="secondQuestion" />
+            <br>
+            <button type="text" id="b" onclick="saveSecondQuestion()">Submit</button>
+        </div>
+
+        <div id="myT" style="display: none;">
+            
+            <label for="thirdQuestion">What frequency do you take?</label>
+            <input type="text" id="thirdQuestion" />
+            <br>
+            <br>
+            <button type="text" id="b" onclick="saveThirdQuestion()">Submit</button>
+        </div>
+       
+        <script>
+
+			var getUsername = localStorage.getItem("option");
+            var test = document.getElementById(getUsername);  
+           
+            if(test!=null)	{
+            if (test.value=="Yes"){
+
+                var firstOptionObject = document.getElementById("Yes");
+                var getObject = document.getElementById("firstQuestion");
+                var getElement = localStorage.getItem("question");
+                
+                document.getElementById("myF").style.display = "block";
+                
+                firstOptionObject.checked = true;
+
+				getObject.value = getElement;
+           }else if(getUsername=="NotNow"){
+
+                var secondOptionObject = document.getElementById("NotNow");
+                var getObject = document.getElementById("secondQuestion");
+                var getElement = localStorage.getItem("question");
+                
+                document.getElementById("myS").style.display = "block";
+
+                secondOptionObject.checked = true;    
+				getObject.value = getElement;
+            }else {
+
+                var thirdOptionObject = document.getElementById("Never");
+                var getObject = document.getElementById("thirdQuestion");
+                var getElement = localStorage.getItem("question");
+                
+                document.getElementById("myT").style.display = "block";
+              
+                thirdOptionObject.checked = true;              
+				getObject.value = getElement;
+           } 
+        }              
+        </script>
+        
+        <br>
+        <button onclick="gotoFisrtPage()">Back</button>
+        
+        <button onclick="gotoThirdPage()">Go to Third Page</button>
+    </body>
+</html>
+
+
+    

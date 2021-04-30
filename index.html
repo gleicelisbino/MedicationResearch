@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Medication Research</title>
+		<script type="text/javascript" src="requestFirstPage.js"></script>
+		<style>
+			body {
+				background-color:indigo;
+				color:azure;
+				border-style: dashed;
+				padding: 50px;
+				width: 200px;
+				height: 300px;
+				text-align: justify;
+
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-left:-200px;
+				margin-top:-180px;
+		}
+		</style>
+	</head>
+	<h4>Research</h4>
+	<body>	
+		<label for="username">What is your username?</label>
+		<input type="text" id="username" />
+		<br>
+		</br>
+		<label for="message">What remedies do you take?</label>
+		<textarea type="text" id="message"> </textarea>
+		<br>
+		<input type="submit" value="Save" onclick="add()"/>
+		<script>
+			var usernameObject = document.getElementById("username");
+			var getUsername = localStorage.getItem("username");
+		
+			usernameObject.value = getUsername;					
+		</script>
+		<script>
+			var messageObject = document.getElementById("message");
+			var getMessage = localStorage.getItem("message");
+		
+			messageObject.value = getMessage;
+		</script>
+		<br>
+		</br>
+		<button onclick="gotoSecondPage()">Go to Second Page</button>
+	</body>
+</html>
